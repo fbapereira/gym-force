@@ -39,9 +39,26 @@ describe('Given a not logged in user', () => {
     });
 
     describe("when fill the form with invalid credentials and click the login button", () => {
-    });
+      beforeEach(() => {
+        cy.get('input[data-e2e="txtLogin"]').type('Notadmin');
+        cy.get('input[data-e2e="txtPassword"]').type('Notadmin');
+        cy.get('button').contains('Login').click();
+      });
 
+      it('Then should see the error message', () => {
+        cy.get('.p-toast-message-error').should('have.length', 1);
+      });
+    });
+    
     describe('When click the register link', () => {
+      beforeEach(() => {
+        cy.get('button').contains('register').click();
+      });
+
+     
+      it('Then should see the register page', () => {
+        cy.contains('register works');
+      });
     });
   });
-})
+});
