@@ -50,16 +50,15 @@ describe('Given a not logged in user', () => {
       });
     });
     
-
-
     describe('When click the register link', () => {
-      beforeEach(()=>{
+      beforeEach(() => {
         cy.get('button').contains('register').click();
-      } );
-      
-    it('Then should see the login page', () => {
-      cy.contains('register works');
-    });
+      });
+
+     
+      it('Then should see the register page', () => {
+        cy.contains('register works');
+      });
     });
   });
-})
+});
