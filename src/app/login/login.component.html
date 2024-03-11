@@ -1,6 +1,7 @@
-<div [formGroup]="loginFormGroup">
-<input data-e2e="txtLogin" pInputText placeholder="Login" formControlName="txtLogin"/>
-<input data-e2e="txtPassword" pInputText placeholder="Password" formControlName="txtPassword" />
-<p-button data-e2e="btn-login" [loading]="loading" (onClick)="login()" label="Submit"></p-button>
-</div>
-<p-toast></p-toast>
+<h2>Login</h2>
+<form [formGroup]="loginFormGroup">
+  <input data-e2e="txtLogin" pInputText placeholder="Login" formControlName="txtLogin"/>
+  <input data-e2e="txtPassword" pInputText placeholder="Password" formControlName="txtPassword" />
+  <p-button data-e2e="btn-register" label="register" [link]="true"></p-button>
+  <p-button data-e2e="btn-login" [loading]="loading" (onClick)="login()" label="Submit"></p-button>
+</form>
