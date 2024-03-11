@@ -27,5 +27,21 @@ describe('Given a not logged in user', () => {
         cy.get('.p-toast-message-success').should('have.length', 1);
       });
     });
+
+    describe('When not fill the login form and click the login button', () => {
+      beforeEach(() => {
+        cy.get('button').contains('Login').click();
+      });
+
+      it('Then should see the error message', () => {
+        cy.get('.p-toast-message-error').should('have.length', 1);
+      });
+    });
+
+    describe("when fill the form with invalid credentials and click the login button", () => {
+    });
+
+    describe('When click the register link', () => {
+    });
   });
 })
